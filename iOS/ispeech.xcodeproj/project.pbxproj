@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* TiIspeechModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* TiIspeechModule.h */; };
+		24DD6CFA1134B3F500162E58 /* TiIspeechModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* TiIspeechModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* TiIspeechModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* TiIspeechModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* TiIspeechModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* TiIspeechModuleAssets.m */; };
+		4337BF0A17F7551D0001CF2E /* iSpeechSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0117F7551D0001CF2E /* iSpeechSDK.h */; };
+		4337BF0B17F7551D0001CF2E /* ISSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0217F7551D0001CF2E /* ISSpeechRecognition.h */; };
+		4337BF0C17F7551D0001CF2E /* ISSpeechRecognitionLocales.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0317F7551D0001CF2E /* ISSpeechRecognitionLocales.h */; };
+		4337BF0D17F7551D0001CF2E /* ISSpeechRecognitionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0417F7551D0001CF2E /* ISSpeechRecognitionResult.h */; };
+		4337BF0E17F7551D0001CF2E /* ISSpeechSynthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0517F7551D0001CF2E /* ISSpeechSynthesis.h */; };
+		4337BF0F17F7551D0001CF2E /* ISSpeechSynthesisVoices.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF0617F7551D0001CF2E /* ISSpeechSynthesisVoices.h */; };
+		4337BF1317F7557F0001CF2E /* TiIspeechRecognizerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF1117F7557F0001CF2E /* TiIspeechRecognizerProxy.h */; };
+		4337BF1417F7557F0001CF2E /* TiIspeechRecognizerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337BF1217F7557F0001CF2E /* TiIspeechRecognizerProxy.m */; };
+		4337BF1717F755CE0001CF2E /* TiIspeechDictationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF1517F755CE0001CF2E /* TiIspeechDictationProxy.h */; };
+		4337BF1817F755CE0001CF2E /* TiIspeechDictationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337BF1617F755CE0001CF2E /* TiIspeechDictationProxy.m */; };
+		4337BF1A17F763140001CF2E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1917F763140001CF2E /* CFNetwork.framework */; };
+		4337BF1C17F763280001CF2E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1B17F763280001CF2E /* Security.framework */; };
+		4337BF1E17F763400001CF2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1D17F763400001CF2E /* SystemConfiguration.framework */; };
+		4337BF2017F7635B0001CF2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1F17F7635B0001CF2E /* CoreGraphics.framework */; };
+		4337BF2217F763620001CF2E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF2117F763620001CF2E /* AudioToolbox.framework */; };
+		4337BF2417F764960001CF2E /* libiSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF2317F764960001CF2E /* libiSpeechSDK.a */; };
+		4337BF2717F76EBD0001CF2E /* TiIspeechSpeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF2517F76EBD0001CF2E /* TiIspeechSpeakProxy.h */; };
+		4337BF2817F76EBD0001CF2E /* TiIspeechSpeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337BF2617F76EBD0001CF2E /* TiIspeechSpeakProxy.m */; };
+		AA747D9F0F9514B9006C5449 /* TiIspeech_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiIspeech_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = ispeech;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* TiIspeechModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiIspeechModule.h; path = Classes/TiIspeechModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* TiIspeechModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiIspeechModule.m; path = Classes/TiIspeechModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* TiIspeechModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiIspeechModuleAssets.h; path = Classes/TiIspeechModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* TiIspeechModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiIspeechModuleAssets.m; path = Classes/TiIspeechModuleAssets.m; sourceTree = "<group>"; };
+		4337BF0117F7551D0001CF2E /* iSpeechSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iSpeechSDK.h; sourceTree = "<group>"; };
+		4337BF0217F7551D0001CF2E /* ISSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognition.h; sourceTree = "<group>"; };
+		4337BF0317F7551D0001CF2E /* ISSpeechRecognitionLocales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognitionLocales.h; sourceTree = "<group>"; };
+		4337BF0417F7551D0001CF2E /* ISSpeechRecognitionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechRecognitionResult.h; sourceTree = "<group>"; };
+		4337BF0517F7551D0001CF2E /* ISSpeechSynthesis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechSynthesis.h; sourceTree = "<group>"; };
+		4337BF0617F7551D0001CF2E /* ISSpeechSynthesisVoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISSpeechSynthesisVoices.h; sourceTree = "<group>"; };
+		4337BF1117F7557F0001CF2E /* TiIspeechRecognizerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiIspeechRecognizerProxy.h; path = Classes/TiIspeechRecognizerProxy.h; sourceTree = "<group>"; };
+		4337BF1217F7557F0001CF2E /* TiIspeechRecognizerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiIspeechRecognizerProxy.m; path = Classes/TiIspeechRecognizerProxy.m; sourceTree = "<group>"; };
+		4337BF1517F755CE0001CF2E /* TiIspeechDictationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiIspeechDictationProxy.h; path = Classes/TiIspeechDictationProxy.h; sourceTree = "<group>"; };
+		4337BF1617F755CE0001CF2E /* TiIspeechDictationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiIspeechDictationProxy.m; path = Classes/TiIspeechDictationProxy.m; sourceTree = "<group>"; };
+		4337BF1917F763140001CF2E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4337BF1B17F763280001CF2E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4337BF1D17F763400001CF2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4337BF1F17F7635B0001CF2E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4337BF2117F763620001CF2E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4337BF2317F764960001CF2E /* libiSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiSpeechSDK.a; path = SDKLib/libiSpeechSDK.a; sourceTree = "<group>"; };
+		4337BF2517F76EBD0001CF2E /* TiIspeechSpeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiIspeechSpeakProxy.h; path = Classes/TiIspeechSpeakProxy.h; sourceTree = "<group>"; };
+		4337BF2617F76EBD0001CF2E /* TiIspeechSpeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiIspeechSpeakProxy.m; path = Classes/TiIspeechSpeakProxy.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* TiIspeech_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiIspeech_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libTiIspeech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiIspeech.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4337BF2417F764960001CF2E /* libiSpeechSDK.a in Frameworks */,
+				4337BF2217F763620001CF2E /* AudioToolbox.framework in Frameworks */,
+				4337BF2017F7635B0001CF2E /* CoreGraphics.framework in Frameworks */,
+				4337BF1E17F763400001CF2E /* SystemConfiguration.framework in Frameworks */,
+				4337BF1C17F763280001CF2E /* Security.framework in Frameworks */,
+				4337BF1A17F763140001CF2E /* CFNetwork.framework in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libTiIspeech.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* ispeech */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = ispeech;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4337BF2317F764960001CF2E /* libiSpeechSDK.a */,
+				4337BF2117F763620001CF2E /* AudioToolbox.framework */,
+				4337BF1F17F7635B0001CF2E /* CoreGraphics.framework */,
+				4337BF1D17F763400001CF2E /* SystemConfiguration.framework */,
+				4337BF1B17F763280001CF2E /* Security.framework */,
+				4337BF1917F763140001CF2E /* CFNetwork.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4337BEFC17F7551D0001CF2E /* iSpeechSDK */,
+				24DE9E0F11C5FE74003F90F6 /* TiIspeechModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* TiIspeechModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* TiIspeechModule.h */,
+				24DD6CF81134B3F500162E58 /* TiIspeechModule.m */,
+				4337BF1117F7557F0001CF2E /* TiIspeechRecognizerProxy.h */,
+				4337BF1217F7557F0001CF2E /* TiIspeechRecognizerProxy.m */,
+				4337BF1517F755CE0001CF2E /* TiIspeechDictationProxy.h */,
+				4337BF1617F755CE0001CF2E /* TiIspeechDictationProxy.m */,
+				4337BF2517F76EBD0001CF2E /* TiIspeechSpeakProxy.h */,
+				4337BF2617F76EBD0001CF2E /* TiIspeechSpeakProxy.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* TiIspeech_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4337BEFC17F7551D0001CF2E /* iSpeechSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4337BF0017F7551D0001CF2E /* Headers */,
+			);
+			name = iSpeechSDK;
+			path = Classes/iSpeechSDK;
+			sourceTree = "<group>";
+		};
+		4337BF0017F7551D0001CF2E /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4337BF0117F7551D0001CF2E /* iSpeechSDK.h */,
+				4337BF0217F7551D0001CF2E /* ISSpeechRecognition.h */,
+				4337BF0317F7551D0001CF2E /* ISSpeechRecognitionLocales.h */,
+				4337BF0417F7551D0001CF2E /* ISSpeechRecognitionResult.h */,
+				4337BF0517F7551D0001CF2E /* ISSpeechSynthesis.h */,
+				4337BF0617F7551D0001CF2E /* ISSpeechSynthesisVoices.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* TiIspeech_Prefix.pch in Headers */,
+				4337BF0B17F7551D0001CF2E /* ISSpeechRecognition.h in Headers */,
+				4337BF1717F755CE0001CF2E /* TiIspeechDictationProxy.h in Headers */,
+				24DD6CF91134B3F500162E58 /* TiIspeechModule.h in Headers */,
+				4337BF0E17F7551D0001CF2E /* ISSpeechSynthesis.h in Headers */,
+				4337BF1317F7557F0001CF2E /* TiIspeechRecognizerProxy.h in Headers */,
+				4337BF0C17F7551D0001CF2E /* ISSpeechRecognitionLocales.h in Headers */,
+				4337BF2717F76EBD0001CF2E /* TiIspeechSpeakProxy.h in Headers */,
+				4337BF0F17F7551D0001CF2E /* ISSpeechSynthesisVoices.h in Headers */,
+				4337BF0D17F7551D0001CF2E /* ISSpeechRecognitionResult.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* TiIspeechModuleAssets.h in Headers */,
+				4337BF0A17F7551D0001CF2E /* iSpeechSDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* ispeech */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ispeech" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ispeech;
+			productName = ispeech;
+			productReference = D2AAC07E0554694100DB518D /* libTiIspeech.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ispeech" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* ispeech */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* ispeech */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4337BF2817F76EBD0001CF2E /* TiIspeechSpeakProxy.m in Sources */,
+				4337BF1817F755CE0001CF2E /* TiIspeechDictationProxy.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* TiIspeechModule.m in Sources */,
+				4337BF1417F7557F0001CF2E /* TiIspeechRecognizerProxy.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* TiIspeechModuleAssets.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* ispeech */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiIspeech.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiIspeech_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/Classes/iSpeechSDK,
+					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/SDKLib,
+				);
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiIspeech;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/TiIspeech.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiIspeech_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/Classes/iSpeechSDK,
+					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/SDKLib,
+				);
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiIspeech;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/TiIspeech.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiIspeech_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiIspeech;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/TiIspeech.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TiIspeech_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = TiIspeech;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "ispeech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ispeech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

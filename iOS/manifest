@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: Titanium module for iSpeech.org
+author: Benjamin Bahrenburg
+license: MIT License
+copyright: Copyright (c) 2013 by Benjamin Bahrenburg (bencoding)
+
+
+# these should not be edited
+name: ispeech
+moduleid: ti.ispeech
+guid: 2d7a53f1-30a6-4cef-bba7-968c89530de7
+platform: iphone
+minsdk: 3.1.3.GA
