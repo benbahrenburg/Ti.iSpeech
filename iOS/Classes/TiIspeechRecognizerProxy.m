@@ -9,11 +9,24 @@
 
 #import "TiIspeechRecognizerProxy.h"
 #import "TiUtils.h"
-
+#import <AVFoundation/AVAudioSession.h>
 @implementation TiIspeechRecognizerProxy
 
 -(void)_configure
 {
+    __block BOOL isAllowed = YES;
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_0
+    if([[AVAudioSession sharedInstance]
+        respondsToSelector:@selector(requestRecordPermission)])
+    {
+        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL allowed){
+            NSLog(@"Allow microphone use? %d", allowed);
+            isAllowed = allowed;
+        }];
+    }
+#endif
+    _isAllowed= isAllowed;
     _isRecording = NO;
     _debug = NO;
 	[super _configure];
@@ -36,6 +49,10 @@
         [self fireEvent:name withObject:event];
     }
 }
+-(NSNumber*)isPermitted:(id)unused
+{
+    return NUMBOOL(_isAllowed);
+}
 -(NSNumber*)isRecording:(id)unused
 {
     return NUMBOOL(_isRecording);
@@ -56,6 +73,18 @@
     
     KrollCallback *callback = [args  objectForKey:@"onComplete"];
 	ENSURE_TYPE(callback,KrollCallback);
+
+    if(_isAllowed == NO){
+        NSLog(@"[ERROR] No Microphone Access");
+        NSDictionary *eventErrA = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   NUMBOOL(NO),@"success",
+                                   @"No Microphone access",@"message",
+                                   nil];
+        
+        [self _fireEventToListener:@"onComplete"
+                        withObject:eventErrA listener:callback thisObject:nil];
+        return;
+    }
     
     if([self findAvailable] == NO){
         _isRecording = NO;

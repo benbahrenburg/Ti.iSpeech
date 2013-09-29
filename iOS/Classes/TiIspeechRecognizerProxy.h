@@ -14,6 +14,7 @@
 @private
     BOOL _isRecording;
     BOOL _debug;
+    BOOL _isAllowed;
 }
 
 @property (nonatomic, strong) KrollCallback *outputCallback;

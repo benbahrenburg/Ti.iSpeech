@@ -12,7 +12,7 @@
 #import "TiHost.h"
 #import "TiUtils.h"
 #import "iSpeechSDK.h"
-
+#import <AVFoundation/AVAudioSession.h>
 @implementation TiIspeechModule
 
 #pragma mark Internal
@@ -72,6 +72,26 @@
 -(NSNumber*)isAvailable:(id)unused
 {
     return NUMBOOL(ISSpeechRecognition.audioInputAvailable);
+}
+
+-(NSNumber*)requestPermission:(id)unused
+{
+    BOOL _isAllowed = YES;
+    __block BOOL isAllowed = YES;
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_0
+    if([[AVAudioSession sharedInstance]
+        respondsToSelector:@selector(requestRecordPermission)])
+    {
+        [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL allowed){
+            NSLog(@"Allow microphone use? %d", allowed);
+            isAllowed = allowed;
+        }];
+    }
+#endif
+    _isAllowed= isAllowed;
+    
+    return NUMBOOL(_isAllowed);
 }
 
 MAKE_SYSTEM_PROP(TYPE_SMS,ISFreeFormTypeSMS);

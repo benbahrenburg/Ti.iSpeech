@@ -26,4 +26,4 @@
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 // 
 
-OTHER_LDFLAGS=$(inherited) -framework Security -framework CFNetwork -framework CoreGraphics -framework AudioToolbox -framework SystemConfiguration
+OTHER_LDFLAGS=$(inherited) -framework Security -framework CFNetwork -framework CoreGraphics -framework AudioToolbox -framework SystemConfiguration -framework AVFoundation

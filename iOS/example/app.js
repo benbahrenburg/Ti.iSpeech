@@ -148,4 +148,9 @@ speakButton.addEventListener('click',function(){
 	});
 	dialog.show();		
 });
+
+win.addEventListener('open',function(){
+	Ti.API.info("Has Microphone permission? " + ispeech.requestPermission());
+});
+
 win.open();

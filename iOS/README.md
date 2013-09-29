@@ -72,6 +72,19 @@ None
 Ti.API.info("Is Audio available? " + ispeech.isAvailable());
 </code></pre>
 
+<h3>requestPermission</h3>
+
+Starting with iOS 7, you now need to request permission before using the microphone. To do this call the requestPermission method. This will request the permission and return the results.  If permission has already been granted, true/false will be returned to indicate the status of the request.
+
+<b>Parameters</b>
+None
+
+<b>Example</b>
+<pre><code>
+Ti.API.info("Has Microphone permission? " + ispeech.requestPermission());
+</code></pre>
+
+
 
 <h2>Module Properties</h2>
 The following properties are available from the module. These can be used to config the Recognizer and Dictation proxies.
