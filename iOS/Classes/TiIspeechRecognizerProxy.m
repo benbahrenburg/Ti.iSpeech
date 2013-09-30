@@ -34,10 +34,16 @@
 
 -(void)_destroy
 {
-    self.outputCallback = nil;
+    [self removeRecognizer];
 	[super _destroy];
 }
-
+-(void)removeRecognizer
+{
+    if(self.recognition!=nil){
+        [[self recognition] setDelegate:nil];
+        self.recognition = nil;
+    }
+}
 -(void) doCallListener:(NSString*)name
 {
     if ([self _hasListeners:name]) {
@@ -130,32 +136,40 @@
     }
     
     _debug = [TiUtils boolValue:@"debug" properties:args def:NO];
-    ISSpeechRecognition *recognition = [[ISSpeechRecognition alloc] init];
+    
+    if(self.recognition!=nil){
+        [self removeRecognizer];
+    }
+    
+    self.recognition = [[ISSpeechRecognition alloc] init];
     NSArray *inputCommands = [NSArray arrayWithArray:commands];
 
     //loop through and add coordinates
     for (int iLoop = 0; iLoop < [inputCommands count]; iLoop++) {
-        [recognition addAlias:[TiUtils stringValue:@"alias" properties:[inputCommands objectAtIndex:iLoop]]
-                     forItems:[NSArray arrayWithArray:[[inputCommands objectAtIndex:iLoop] objectForKey:@"values"]]];
-        [recognition addCommand:[TiUtils stringValue:@"command" properties:[inputCommands objectAtIndex:iLoop]]];
+        //Allow for commands without alias
+        if([[inputCommands objectAtIndex:iLoop] objectForKey:@"alias"]!=nil){
+            [self.recognition  addAlias:[TiUtils stringValue:@"alias" properties:[inputCommands objectAtIndex:iLoop]]
+                         forItems:[NSArray arrayWithArray:[[inputCommands objectAtIndex:iLoop] objectForKey:@"values"]]];
+        }
+        [self.recognition  addCommand:[TiUtils stringValue:@"command" properties:[inputCommands objectAtIndex:iLoop]]];
     }
     
-    recognition.silenceDetectionEnabled = [TiUtils boolValue:@"silenceDetection" properties:args def:YES];
-    recognition.freeformType = [TiUtils intValue:@"freeformType" properties:args def:ISFreeFormTypeSMS];
+    [self recognition].silenceDetectionEnabled = [TiUtils boolValue:@"silenceDetection" properties:args def:YES];
+    [self recognition].freeformType = [TiUtils intValue:@"freeformType" properties:args def:ISFreeFormTypeSMS];
     
     if([args  objectForKey:@"locale"]!=nil){
-        [recognition setLocale:[TiUtils stringValue:@"locale" properties:args]];
+        [[self recognition] setLocale:[TiUtils stringValue:@"locale" properties:args]];
     }
     
     if([args  objectForKey:@"model"]!=nil){
-        [recognition setModel:[TiUtils stringValue:@"model" properties:args]];
+        [[self recognition] setModel:[TiUtils stringValue:@"model" properties:args]];
     }
     
 	NSError *err;
 	_isRecording = YES;
-	[recognition setDelegate:self];
+	[[self recognition] setDelegate:self];
 	
-	if(![recognition listen:&err]) {
+	if(![self.recognition listen:&err]) {
         _isRecording = NO;
 		NSLog(@"[ERROR] %@", err);
         NSDictionary *eventErr4 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -165,6 +179,7 @@
         
         [self _fireEventToListener:@"onComplete"
                         withObject:eventErr4 listener:callback thisObject:nil];
+        [self removeRecognizer];
 	}
 }
 
@@ -188,6 +203,7 @@
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
     
+    [self removeRecognizer];
 }
 
 - (void)recognition:(ISSpeechRecognition *)speechRecognition didFailWithError:(NSError *)error {
@@ -207,6 +223,7 @@
         [self _fireEventToListener:@"onComplete"
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
+   [self removeRecognizer];
 }
 
 - (void)recognitionCancelledByUser:(ISSpeechRecognition *)speechRecognition {
@@ -224,6 +241,7 @@
         [self _fireEventToListener:@"onComplete"
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
+    [self removeRecognizer];
 }
 
 - (void)recognitionDidBeginRecording:(ISSpeechRecognition *)speechRecognition {

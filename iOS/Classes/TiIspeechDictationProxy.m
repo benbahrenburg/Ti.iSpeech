@@ -34,7 +34,7 @@
 
 -(void)_destroy
 {
-    self.outputCallback = nil;
+    [self removeRecognizer];
 	[super _destroy];
 }
 
@@ -66,6 +66,14 @@
 -(NSNumber*)isAvailable:(id)unused
 {
     return NUMBOOL([self findAvailable]);
+}
+
+-(void)removeRecognizer
+{
+    if(self.recognition!=nil){
+        [[self recognition] setDelegate:nil];
+        self.recognition = nil;
+    }
 }
 
 -(void)start:(id)args
@@ -112,27 +120,30 @@
     }
 
     _debug = [TiUtils boolValue:@"debug" properties:args def:NO];
-    self.outputCallback = callback;    
-    ISSpeechRecognition *recognition = [[ISSpeechRecognition alloc] init];
+    self.outputCallback = callback;
+    if(self.recognition!=nil){
+        [self removeRecognizer];
+    }
+    self.recognition = [[ISSpeechRecognition alloc] init];
 
-    recognition.silenceDetectionEnabled = [TiUtils boolValue:@"silenceDetection" properties:args def:YES];
-    recognition.freeformType = [TiUtils intValue:@"freeformType" properties:args def:ISFreeFormTypeDictation];
+    [self recognition].silenceDetectionEnabled = [TiUtils boolValue:@"silenceDetection" properties:args def:YES];
+    [self recognition].freeformType = [TiUtils intValue:@"freeformType" properties:args def:ISFreeFormTypeDictation];
     
     if([args  objectForKey:@"locale"]!=nil){
-        [recognition setLocale:[TiUtils stringValue:@"locale" properties:args]];
+        [[self recognition] setLocale:[TiUtils stringValue:@"locale" properties:args]];
     }
 
     if([args  objectForKey:@"model"]!=nil){
-        [recognition setModel:[TiUtils stringValue:@"model" properties:args]];
+        [[self recognition] setModel:[TiUtils stringValue:@"model" properties:args]];
     }
     
 	NSError *err;
 	
     _isRecording = YES;
     
-	[recognition setDelegate:self];
+	[[self recognition] setDelegate:self];
 	
-	if(![recognition listen:&err]) {
+	if(![[self recognition] listen:&err]) {
         _isRecording = NO;
 		NSLog(@"[ERROR] %@", err);
         NSDictionary *eventErr3 = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -142,6 +153,7 @@
         
         [self _fireEventToListener:@"onComplete"
                         withObject:eventErr3 listener:callback thisObject:nil];
+        [self removeRecognizer];
 	}
 }
 
@@ -164,6 +176,7 @@
         [self _fireEventToListener:@"onComplete"
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
+    [self removeRecognizer];
     
 }
 
@@ -185,6 +198,7 @@
         [self _fireEventToListener:@"onComplete"
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
+    [self removeRecognizer];
 }
 
 - (void)recognitionCancelledByUser:(ISSpeechRecognition *)speechRecognition {
@@ -203,6 +217,7 @@
         [self _fireEventToListener:@"onComplete"
                         withObject:event listener:self.outputCallback thisObject:nil];
     }
+    [self removeRecognizer];
 }
 
 - (void)recognitionDidBeginRecording:(ISSpeechRecognition *)speechRecognition {

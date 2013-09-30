@@ -18,5 +18,6 @@
 }
 
 @property (nonatomic, strong) KrollCallback *outputCallback;
+@property (nonatomic, strong) ISSpeechRecognition *recognition;
 
 @end
