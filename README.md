@@ -90,11 +90,17 @@ Ti.API.info("Has Microphone permission? " + ispeech.requestPermission());
 The following properties are available from the module. These can be used to config the Recognizer and Dictation proxies.
 
 <b>TYPE_SMS</b> - Optimized for SMS messages.
+
 <b>TYPE_VOICEMAIL</b> Optimized for handling voicemail
+
 <b>TYPE_DICTATION</b> Optimized for dictation
+
 <b>TYPE_MESSAGE</b> - Optimized for message taking
+
 <b>TYPE_INSTANT_MESSAGE</b> - Optimized for instant messages
+
 <b>TYPE_TRANSCRIPT</b> - Optimized for taking transcripts
+
 <b>TYPE_MEMO</b> - Optimized for Memos
 
 <h2>Recognizer Methods</h2>
