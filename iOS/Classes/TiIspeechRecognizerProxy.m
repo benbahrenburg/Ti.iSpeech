@@ -141,8 +141,8 @@
         [self removeRecognizer];
     }
     
-    self.recognition = [[ISSpeechRecognition alloc] init];
-    NSArray *inputCommands = [NSArray arrayWithArray:commands];
+    self.recognition = [[[ISSpeechRecognition alloc] init] autorelease];
+    NSArray *inputCommands = [[NSArray arrayWithArray:commands] autorelease];
 
     //loop through and add coordinates
     for (int iLoop = 0; iLoop < [inputCommands count]; iLoop++) {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -41,12 +41,12 @@
 		4337BF1E17F763400001CF2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1D17F763400001CF2E /* SystemConfiguration.framework */; };
 		4337BF2017F7635B0001CF2E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF1F17F7635B0001CF2E /* CoreGraphics.framework */; };
 		4337BF2217F763620001CF2E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF2117F763620001CF2E /* AudioToolbox.framework */; };
-		4337BF2417F764960001CF2E /* libiSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4337BF2317F764960001CF2E /* libiSpeechSDK.a */; };
 		4337BF2717F76EBD0001CF2E /* TiIspeechSpeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 4337BF2517F76EBD0001CF2E /* TiIspeechSpeakProxy.h */; };
 		4337BF2817F76EBD0001CF2E /* TiIspeechSpeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4337BF2617F76EBD0001CF2E /* TiIspeechSpeakProxy.m */; };
 		4360494C17F7BC9D00CD943B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4360494B17F7BC9D00CD943B /* AVFoundation.framework */; };
 		AA747D9F0F9514B9006C5449 /* TiIspeech_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* TiIspeech_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		CA5B14881A85ECF50056F53A /* libiSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5B14871A85ECF50056F53A /* libiSpeechSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +86,7 @@
 		4360494B17F7BC9D00CD943B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AA747D9E0F9514B9006C5449 /* TiIspeech_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiIspeech_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CA5B14871A85ECF50056F53A /* libiSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiSpeechSDK.a; path = SDKLib/libiSpeechSDK.a; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libTiIspeech.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTiIspeech.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5B14881A85ECF50056F53A /* libiSpeechSDK.a in Frameworks */,
 				4360494C17F7BC9D00CD943B /* AVFoundation.framework in Frameworks */,
-				4337BF2417F764960001CF2E /* libiSpeechSDK.a in Frameworks */,
 				4337BF2217F763620001CF2E /* AudioToolbox.framework in Frameworks */,
 				4337BF2017F7635B0001CF2E /* CoreGraphics.framework in Frameworks */,
 				4337BF1E17F763400001CF2E /* SystemConfiguration.framework in Frameworks */,
@@ -172,6 +173,7 @@
 		4337BEFC17F7551D0001CF2E /* iSpeechSDK */ = {
 			isa = PBXGroup;
 			children = (
+				CA5B14871A85ECF50056F53A /* libiSpeechSDK.a */,
 				4337BF0017F7551D0001CF2E /* Headers */,
 			);
 			name = iSpeechSDK;
@@ -239,9 +241,10 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ispeech" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -327,6 +330,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/Classes/iSpeechSDK,
 					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/SDKLib,
+					"$(PROJECT_DIR)/SDKLib",
 				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
@@ -368,6 +372,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/Classes/iSpeechSDK,
 					/Users/benjamin/Projects/Ti/Modules/iSpeech/iOS/SDKLib,
+					"$(PROJECT_DIR)/SDKLib",
 				);
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
@@ -402,6 +407,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -413,6 +419,7 @@
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -445,6 +452,7 @@
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
