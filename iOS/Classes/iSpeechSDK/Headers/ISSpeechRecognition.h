@@ -73,7 +73,7 @@ typedef void(^ISSpeechRecognitionHandler)(NSError *error, ISSpeechRecognitionRes
 - (void)recognition:(ISSpeechRecognition *)speechRecognition didFailWithError:(NSError *)error;
 
 /**
- * Speech recognition was cancelled by the user. This method is only called if it was the user that cancelled recognition. It will not be called if you call -[ISSpeechRecognition cancel].
+ * Speech recognition was cancelled by the user.
  * 
  * @param speechRecognition The speech recognition instance that was cancelled.
  */

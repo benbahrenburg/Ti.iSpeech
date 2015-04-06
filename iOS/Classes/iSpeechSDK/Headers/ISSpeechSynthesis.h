@@ -97,13 +97,6 @@ typedef void(^ISSpeechSynthesisHandler)(NSError *error, BOOL userCancelled);
  */
 @property (nonatomic, assign) NSInteger bitrate CONFIGURATION_METHOD;
 
-/**
- * Sets whether playback will resume after an interruption.
- *
- * To keep behavior consistent with older versions of the SDK, by default, this is set to `NO`.
- */
-@property (nonatomic, assign) BOOL resumesAfterInterruption;
-
 /** Getting and Setting the Text */
 
 /**

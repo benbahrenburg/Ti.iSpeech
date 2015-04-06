@@ -77,7 +77,7 @@
         synthesis.bitrate = [TiUtils intValue:@"bitrate" properties:args];
     }
     
-    synthesis.resumesAfterInterruption = [TiUtils boolValue:@"resume" properties:args def:NO];
+    //synthesis.resumesAfterInterruption = [TiUtils boolValue:@"resume" properties:args def:NO];
     
     NSError *err;
     _isSpeaking = YES;

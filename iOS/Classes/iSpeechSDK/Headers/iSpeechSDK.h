@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-// Methods marked with `CONFIGURATION_METHOD` can be set globally, for all objects, by calling the methods on [[iSpeechSDK sharedSDK] configuration]. This mimics the Appearance API introduced in iOS 5.
+// Methods marked with `CONFIGURATION_METHOD` can be set globally, for all objects, by calling the methods on [[iSpeechSDK sharedSDK] configuration]. This mimics the Appearance API in iOS 5.
 #define CONFIGURATION_METHOD 
 
 #import "ISSpeechSynthesis.h"
@@ -27,8 +27,6 @@
 
 @property (nonatomic, assign) BOOL silenceDetectionEnabled;
 @property (nonatomic, assign) BOOL adaptiveBitrateEnabled;
-
-@property (nonatomic, assign) BOOL resumesAfterInterruption;
 
 @end
 
